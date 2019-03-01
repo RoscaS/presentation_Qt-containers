@@ -1,0 +1,19 @@
+### ProTip: `auto`
+
+<br>
+<br>
+<br>
+
+```cpp
+// pointeur sur un QVecteur de pointeurs vers des QWidgets:
+QVector<QWidget* > *widgets = new QVector<QWidget*>;
+
+// Equivalent à:
+auto widgets = new QVector<QWidget*>;
+
+// pointeur sur une QMap de pointeurs de QWidgets:
+QMap<QString, QWidget* > *desBoutons = new QMap<QString, QWidget* >;
+
+// Equivalent à:
+auto desBoutons = new QMap<QString, QWidget* >;
+```

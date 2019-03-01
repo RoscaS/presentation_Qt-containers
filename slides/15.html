@@ -1,0 +1,22 @@
+<i>
+  Donc dans les `QVector` c'est `push_back()` pour ajouter un élément et puis dans `QList` c'est `append()` ? C'est un peu nul ça aussi...
+</i>
+
+<br>
+
+**Ruse de sioux**:
+
+<br>
+
+```cpp
+QVector<int> v;
+v << 1 << 2 << 3;
+
+QList<QString> l;
+l << "un" << "deux" << "trois";
+```
+
+<br>
+<br>
+
+**Ne fonctionne pas avec les conteneurs de type hash (maps) !**

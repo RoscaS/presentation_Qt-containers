@@ -1,0 +1,33 @@
+### Itérateurs Java style
+
+<br>
+
+* `QListIterator`: lecture seule
+
+```cpp
+QList<QString> strings{"un", "deux", "trois"};
+
+QListIterator<QString> i(strings);
+while (i.hasNext()){
+    qDebug() << i.next();
+}
+
+// équivalent à:
+foreach (QString str, strings) qDebug() << str;
+```
+
+<br>
+
+* `QMutableListIterator` lecture et écriture
+
+```cpp
+QList<int> lst{1, 2, 3};
+QMutableListIterator<int> i(int);
+
+while (i.hasNext()) {
+    i.next()
+    i.setValue(0)
+}
+```
+
+<br>

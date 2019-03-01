@@ -1,0 +1,30 @@
+_Et j'en fais quoi de mes QWidgets alors ?_
+
+<br>
+<br>
+
+<p><b>Qui a une idée ?</b></p>
+
+<br>
+<br>
+
+
+<div class="fragment">
+
+<ul>
+  <li>Conteneur de pointeurs vers des `QWidget`</li>
+</ul>
+
+<br>
+
+<pre class="lang-cpp"><code>
+auto w = new QWidget{};
+QVector<QWidget *> widgets;
+
+widgets.push_back(w);
+widgets.push_back(new QWidget{});
+
+qDebug() << widgets.size() << "\n"; // => 2
+</code></pre>
+
+</div>

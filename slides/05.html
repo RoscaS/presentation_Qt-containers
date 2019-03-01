@@ -1,0 +1,26 @@
+### Forme canonique de **Coplien**
+
+<br>
+
+* On parle d'une **classe** qui respecte la forme canonique de Coplien
+* Cette classe doit avoir:
+  * un constructeur par défaut
+  * un constructeur de copie
+  * un destructeur
+  * un opérateur d'affectation
+
+<br>
+
+<pre class="fragment">
+<code class="lang-cpp">
+  class Employe {
+  public:
+    Employe() {}
+    Employe(const Employee &other);
+    Employe &operator=(const Employee &other);
+  private:
+    QString myName;
+    QDate myDateOfBirth;
+  };
+</code>
+</pre>

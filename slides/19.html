@@ -1,0 +1,24 @@
+Les deux itérateurs proposent des methodes comme:
+* `toBack()`
+* `hasPrevious()`
+* `previous()`
+
+<br>
+
+<p>Qui permettent ce genre de follies:</p>
+
+<br>
+
+```cpp
+QList<QString> strings{"un", "deux", "trois"};
+QListIterator<QString> i(strings);
+i.toBack();
+
+while (i.hasPrevious()){
+    qDebug() << i.previous();
+}
+```
+
+<br>
+
+Et bien d'autres methodes encore qui n'attendent que vous dans la..... doc.

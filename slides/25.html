@@ -1,0 +1,29 @@
+On peut même itérer dessus...
+
+<br>
+<br>
+
+**Java style:**
+
+```cpp
+QHashIterator<QString, int> i(dict);
+while (i.hasNext()) {
+    i.next();
+    qDebug() << "k: " << i.key() << " \tv: " << i.value();
+}
+```
+
+**STL style:**
+```cpp
+QHash<QString, int>::const_iterator i;
+for (i = dict.constBegin(); i != dict.constEnd(); ++i) {
+    qDebug() << "k: " << i.key() << " \tv: " << i.value();
+}
+```
+
+**output:**
+```cpp
+// k:  "cochon"  	v:  1
+// k:  "poule"  	v:  3
+// k:  "meuh"   	v:  1
+```

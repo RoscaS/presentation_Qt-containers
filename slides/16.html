@@ -1,0 +1,23 @@
+### Les itérateurs
+
+<br>
+<br>
+
+Moyens de parcourir une `QList`:
+
+<br>
+
+```cpp
+QList<QString> strings{"un", "deux", "trois"};
+
+// for classique:
+for (int i = 0; i < strings.size(); i++) {
+    qDebug() << strings.at(i); // via methode `QList::at()`
+    qDebug() << strings[i];    // `QList` surcharge "subscript" []
+}
+
+// for améliorée:
+for (auto &s : strings) {
+    qDebug() << s;
+}
+```

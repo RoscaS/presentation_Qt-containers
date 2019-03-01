@@ -1,0 +1,28 @@
+### Itérateurs STL
+
+<br>
+
+* Compatible avec les algorithmes génériques de la STL
+* **Vitesse d'exécution optimale**
+
+<br>
+
+* Un pour la lecture et l'écriture
+
+```cpp
+QList<QString> strings {"UN", "DEUX", "TROIS"};
+QList<QString>::iterator i;
+
+for (i = strings.begin(); i != strings.end(); ++i) {
+    *i = (*i).toLower();
+}
+```
+
+* Un pour la lecture seule
+
+```cpp
+QList<QString>::const_iterator i;
+for (i = strings.begin(); i != strings.end(); ++i) {
+    qDebug() << *i;
+}
+```

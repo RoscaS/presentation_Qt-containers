@@ -1,0 +1,33 @@
+### Listes associatives aka maps
+
+
+bref des Hash quoi...
+
+* Clé / valeur
+* Conteneur sans relation d'ordre
+* Une clé référence une valeur
+
+<br>
+
+```cpp
+QHash<QString, int> dict;
+dict["poule"] = 3;
+dict["cochon"] = 1;
+dict.insert("meuh", 1);
+```
+
+
+```cpp
+qDebug() << dict["meuh"]; // => 1
+qDebug() << dict.value("poule"); // => 3
+
+// check existence:
+qDebug() << dict.contains("poney"); // => false
+
+qDebug() << dict.value("poney"); // => 0
+qDebug() << dict.contains("poney"); // => false
+
+// Création implicite:
+qDebug() << dict["poney"]; // => 0
+qDebug() << dict.contains("poney"); // => true
+```

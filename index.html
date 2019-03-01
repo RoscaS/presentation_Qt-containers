@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!--<link rel="stylesheet" href="css/theme/black.css">-->
+  <link rel="stylesheet" href="css/theme/simple.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.4/styles/tomorrow.min.css">
+  <!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.type = 'text/css'
+    link.href = window.location.search.match(/print-pdf/gi)
+                ? 'css/print/pdf.css'
+                : 'css/print/paper.css'
+    document.getElementsByTagName('head')[0].appendChild(link)
+  </script>
+
+
+</head>
+<body>
+<div class="reveal" >
+  <div class="slides" id="app" style="max-width: 1200px">
+    <section v-for="i in t1"
+             :data-markdown="`slides/0${i}.html`">
+    </section>
+    <section v-for="i in t2"
+             :data-markdown="`slides/${i}.html`">
+    </section>
+
+
+  </div>
+</div>
+
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      {src: 'plugin/markdown/marked.js'},
+      {src: 'plugin/markdown/markdown.js'},
+      {src: 'plugin/notes/notes.js', async: true},
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      {
+        src: 'plugin/external/external.js',
+        condition: function () {
+          return !!document.querySelector(
+            '[data-external],[data-external-replace]')
+        },
+      },
+      // {
+      //   src: 'node_modules/reveal-code-focus/reveal-code-focus.js',
+      //   async: true,
+      //   callback: function() {
+      //     RevealCodeFocus();
+      //   }
+      // },
+    ],
+  })
+
+  let app = new Vue({
+    el: '#app',
+    data: () => ({
+      t1: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      t2: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
+    }),
+    methods: {
+      range(end) {
+        let tab = [...Array(end).keys()]
+      }
+    },
+    mounted() {
+      console.log(this.range(29))
+    }
+  })
+</script>
+</body>
+</html>
